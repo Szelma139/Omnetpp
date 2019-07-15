@@ -1,0 +1,1240 @@
+file 1710781 1547897061                                         
+version 2
+run static-0-20190119-12:09:12-8548
+attr configname static
+attr datetime 20190119-12:09:12
+attr experiment static
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network DynamicTest
+attr processid 8548
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.scenarioManager.script "xml(\"<empty/>\")"
+param **.ospf.ospfConfig "xmldoc(\"ASConfig.xml\")"
+param **.ospf.helloInterval 1s
+param **.ospf.retransmissionInterval 5s
+param **.ospf.interfaceTransmissionDelay 1s
+param **.ospf.routerDeadInterval 4s
+param **.ospf.authentication.typename "\"NullType\""
+param **.ospf.authenticationKey "\"0x00\""
+param **.H*.numApps 5
+param **.app[0].typename "\"UdpBasicApp\""
+param **.app[0].destPort 1234
+param **.app[0].messageLength "32 bytes"
+param **.app[0].sendInterval 0.1s
+param **.app[0].startTime 100s
+param **.app[0].stopTime "this.startTime + 400s"
+param **.H2.app[0].destAddresses "\"H1\""
+param **.H1.app[0].destAddresses "\"H2\""
+param **.app[1].typename "\"UdpEchoApp\""
+param **.app[1].localPort 1234
+param **.app[2].typename "\"UdpBasicApp\""
+param **.app[2].destPort 1234
+param **.app[2].messageLength "32 bytes"
+param **.app[2].sendInterval 0.11s
+param **.app[2].startTime 100s
+param **.app[2].stopTime "this.startTime + 400s"
+param **.H2.app[2].destAddresses "\"H1\""
+param **.H1.app[2].destAddresses "\"H2\""
+param **.app[3].typename "\"UdpBasicApp\""
+param **.app[3].destPort 1234
+param **.app[3].messageLength "32 bytes"
+param **.app[3].sendInterval 0.11s
+param **.app[3].startTime 100s
+param **.app[3].stopTime "this.startTime + 400s"
+param **.H2.app[3].destAddresses "\"H1\""
+param **.H1.app[3].destAddresses "\"H2\""
+param **.app[4].typename "\"UdpBasicApp\""
+param **.app[4].destPort 1234
+param **.app[4].messageLength "32 bytes"
+param **.app[4].sendInterval 0.0001s
+param **.app[4].startTime 100s
+param **.app[4].stopTime "this.startTime + 400s"
+param **.H2.app[4].destAddresses "\"H1\""
+param **.H1.app[4].destAddresses "\"H2\""
+param **.arp.cacheTimeout 1s
+param *.configurator.addStaticRoutes false
+param *.configurator.addSubnetRoutes false
+param *.configurator.addDefaultRoutes false
+
+vector 0 DynamicTest.R2.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 1 DynamicTest.R2.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 2 DynamicTest.R2.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 3 DynamicTest.H2.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 4 DynamicTest.H2.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 5 DynamicTest.H2.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 6 DynamicTest.RB.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 7 DynamicTest.RB.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 8 DynamicTest.RB.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 9 DynamicTest.R1.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 10 DynamicTest.R1.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 11 DynamicTest.R1.eth[2].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 12 DynamicTest.R1.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 13 DynamicTest.R1.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 14 DynamicTest.R1.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 15 DynamicTest.H1.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 16 DynamicTest.H1.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 17 DynamicTest.H1.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 18 DynamicTest.R2.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 19 DynamicTest.R2.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 20 DynamicTest.R2.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 21 DynamicTest.RC.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 22 DynamicTest.RC.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 23 DynamicTest.RC.eth[1].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 24 DynamicTest.RD.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 25 DynamicTest.RD.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 26 DynamicTest.RD.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 27 DynamicTest.RB.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 28 DynamicTest.RB.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 29 DynamicTest.RB.eth[1].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 30 DynamicTest.RA.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 31 DynamicTest.RA.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 32 DynamicTest.RA.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 33 DynamicTest.RC.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 34 DynamicTest.RC.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 35 DynamicTest.RC.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 36 DynamicTest.RC.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 37 DynamicTest.RC.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 38 DynamicTest.RC.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 39 DynamicTest.R2.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 40 DynamicTest.R2.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 41 DynamicTest.R2.eth[1].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 42 DynamicTest.RB.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 43 DynamicTest.RB.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 44 DynamicTest.RB.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 45 DynamicTest.RD.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 46 DynamicTest.RD.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 47 DynamicTest.RD.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 48 DynamicTest.RK.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 49 DynamicTest.RK.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 50 DynamicTest.RK.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 51 DynamicTest.RL.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 52 DynamicTest.RL.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 53 DynamicTest.RL.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 54 DynamicTest.RK.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 55 DynamicTest.RK.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 56 DynamicTest.RK.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 57 DynamicTest.R1.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 58 DynamicTest.R1.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 59 DynamicTest.R1.eth[3].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 60 DynamicTest.RL.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 61 DynamicTest.RL.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 62 DynamicTest.RL.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 63 DynamicTest.RK.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 64 DynamicTest.RK.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 65 DynamicTest.RK.eth[1].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 66 DynamicTest.RD.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 67 DynamicTest.RD.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 68 DynamicTest.RD.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 69 DynamicTest.R2.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 70 DynamicTest.R2.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 71 DynamicTest.R2.eth[2].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 72 DynamicTest.RA.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 73 DynamicTest.RA.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 74 DynamicTest.RA.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 75 DynamicTest.R1.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 76 DynamicTest.R1.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 77 DynamicTest.R1.eth[1].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 78 DynamicTest.R1.eth[2].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 79 DynamicTest.R1.eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 80 DynamicTest.R1.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 81 DynamicTest.RB.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 82 DynamicTest.RB.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 83 DynamicTest.RB.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 84 DynamicTest.R1.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 85 DynamicTest.R1.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 86 DynamicTest.R1.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 87 DynamicTest.RA.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 88 DynamicTest.RA.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 89 DynamicTest.RA.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 90 DynamicTest.R2.eth[2].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 91 DynamicTest.R2.eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 92 DynamicTest.R2.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 93 DynamicTest.RD.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 94 DynamicTest.RD.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 95 DynamicTest.RD.eth[1].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 96 DynamicTest.RL.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 97 DynamicTest.RL.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 98 DynamicTest.RL.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 99 DynamicTest.R2.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 100 DynamicTest.R2.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 101 DynamicTest.R2.eth[3].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 102 DynamicTest.RC.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 103 DynamicTest.RC.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 104 DynamicTest.RC.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 105 DynamicTest.RA.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 106 DynamicTest.RA.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 107 DynamicTest.RA.eth[1].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 108 DynamicTest.R2.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 109 DynamicTest.RC.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 110 DynamicTest.RB.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 111 DynamicTest.RD.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 112 DynamicTest.RD.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 113 DynamicTest.RB.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 114 DynamicTest.RK.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 115 DynamicTest.RL.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 116 DynamicTest.RL.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 117 DynamicTest.RK.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 118 DynamicTest.R1.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 119 DynamicTest.R1.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 120 DynamicTest.RA.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 121 DynamicTest.RC.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 122 DynamicTest.R2.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 123 DynamicTest.H1.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 124 DynamicTest.H1.app[2] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 125 DynamicTest.H1.app[3] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 126 DynamicTest.H1.app[4] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 127 DynamicTest.H2.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 128 DynamicTest.H2.app[2] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 129 DynamicTest.H2.app[3] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 130 DynamicTest.H2.app[4] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 131 DynamicTest.H1.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 132 DynamicTest.H2.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 133 DynamicTest.H1.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 134 DynamicTest.H2.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 135 DynamicTest.H1.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 136 DynamicTest.H2.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 137 DynamicTest.H1.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 138 DynamicTest.H2.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 139 DynamicTest.H1.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 140 DynamicTest.H2.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 141 DynamicTest.R1.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 142 DynamicTest.R1.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 143 DynamicTest.R2.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 144 DynamicTest.R2.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 145 DynamicTest.R1.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 146 DynamicTest.R2.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 147 DynamicTest.RA.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 148 DynamicTest.H2.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 149 DynamicTest.H2.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 150 DynamicTest.H1.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 151 DynamicTest.H1.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 152 DynamicTest.H2.app[1] echoedPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets echoed, vector(packetBytes)"
+vector 153 DynamicTest.H1.app[1] echoedPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets echoed, vector(packetBytes)"
+vector 154 DynamicTest.H2.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 155 DynamicTest.H2.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 156 DynamicTest.H2.app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 157 DynamicTest.H1.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 158 DynamicTest.H1.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 159 DynamicTest.H1.app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 160 DynamicTest.H1.app[2] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 161 DynamicTest.H1.app[2] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 162 DynamicTest.H1.app[2] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 163 DynamicTest.H2.app[4] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 164 DynamicTest.H2.app[4] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 165 DynamicTest.H2.app[4] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 166 DynamicTest.H1.app[3] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 167 DynamicTest.H1.app[3] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 168 DynamicTest.H1.app[3] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 169 DynamicTest.H2.app[2] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 170 DynamicTest.H2.app[2] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 171 DynamicTest.H2.app[2] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 172 DynamicTest.H1.app[4] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 173 DynamicTest.H1.app[4] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 174 DynamicTest.H1.app[4] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+vector 175 DynamicTest.H2.app[3] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 176 DynamicTest.H2.app[3] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 177 DynamicTest.H2.app[3] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, vector"
+attr unit s
+0	34304 6022 7 33074 0.08782770417 100.00636282 235 28 64 14468 892784
+1	40326 6022 8 33076 0.08782770417 100.00636282 235 64 82 18716 1491752
+2	46348 5896 9 33080 0.08783490417 100.0063697 235 64 82 18716 1491752
+3	52244 5897 10 33082 0.08783500417 100.0063698 235 64 82 18716 1491752
+4	58141 5897 10 33082 0.08783500417 100.0063698 235 64 82 18716 1491752
+5	64038 5897 11 33084 0.08783500417 100.0063698 235 46 64 14486 894116
+6	69935 4862 16 33059 0.089228422814 100.00635584 185 28 120 12216 828800
+7	74797 4865 17 33061 0.089228422814 100.00635584 185 64 138 15600 1334456
+8	79662 4875 18 33065 0.089235622814 100.00636272 185 64 138 15600 1334456
+9	84537 4875 19 33067 0.089235722814 100.00636282 185 64 138 15600 1334456
+10	89412 5060 19 33067 0.089235722814 100.00636282 185 64 138 15600 1334456
+11	94472 5057 20 33069 0.089235722814 100.00636282 185 46 120 12270 832796
+12	99529 6358 26 33073 0.089470098282 100.00636282 235 28 64 14468 892784
+13	105887 6358 27 33075 0.089470098282 100.00636282 235 64 82 18716 1491752
+14	112245 6230 28 33079 0.089477298282 100.0063697 235 64 82 18716 1491752
+15	118475 6231 29 33081 0.089477398282 100.0063698 235 64 82 18716 1491752
+16	124706 6231 29 33081 0.089477398282 100.0063698 235 64 82 18716 1491752
+17	130937 6231 30 33083 0.089477398282 100.0063698 235 46 64 14486 894116
+18	137168 5149 35 33112 0.089873400851 100.00640698 189 28 260 12632 902464
+19	142317 5152 36 33114 0.089873400851 100.00640698 189 64 278 16088 1424392
+20	147469 5166 37 33118 0.089880600851 100.00641386 189 64 278 16088 1424392
+21	152635 5141 38 32962 0.089880700851 100.00631396 188 64 278 16010 1418308
+22	157776 5141 38 32962 0.089880700851 100.00631396 188 64 278 16010 1418308
+23	162917 5138 39 32964 0.089880700851 100.00631396 188 46 260 12626 902860
+24	168055 5136 45 33045 0.090262027451 100.00634886 188 28 140 12376 842240
+25	173191 5138 46 33047 0.090262027451 100.00634886 188 64 158 15832 1356608
+26	178329 5146 47 33051 0.090269227451 100.00635574 188 64 158 15832 1356608
+27	183475 5148 48 33053 0.090269327451 100.00635584 188 64 158 15832 1356608
+28	188623 5148 48 33053 0.090269327451 100.00635584 188 64 158 15832 1356608
+29	193771 5146 49 33055 0.090269327451 100.00635584 188 46 140 12448 847568
+30	198917 3205 55 22614 0.092510047472 100.0000511 114 28 212 8040 601440
+31	202122 3208 56 22617 0.092510047472 100.0000511 114 64 230 10128 931776
+32	205330 3225 57 22633 0.092517247472 100.00005686 114 64 230 10128 931776
+33	208555 3225 58 22634 0.092517347472 100.00005696 114 64 230 10128 931776
+34	211780 3225 58 22634 0.092517347472 100.00005696 114 64 230 10128 931776
+35	215005 3222 59 22635 0.092517347472 100.00005696 114 46 212 8076 604104
+36	218227 3374 65 22509 0.096346980613 100.0000324 120 28 120 8304 593856
+37	221601 3374 66 22510 0.096346980613 100.0000324 120 64 138 10518 937620
+38	224975 3383 67 22536 0.096354500613 100.00003816 120 64 138 10518 937620
+39	228358 3383 68 22537 0.096354600613 100.00003826 120 64 138 10518 937620
+40	231741 3383 68 22537 0.096354600613 100.00003826 120 64 138 10518 937620
+41	235124 3383 69 22540 0.096354600613 100.00003826 120 46 120 8358 597852
+42	238507 6861 192 33046 0.096843115973 100.00634886 255 28 188 16452 1100400
+43	245368 6864 193 33048 0.096843115973 100.00634886 255 64 206 21114 1783212
+44	252232 6879 194 33052 0.096850635973 100.00635574 255 64 206 21114 1783212
+45	259111 6880 195 33054 0.096850735973 100.00635584 255 64 206 21114 1783212
+46	265991 6880 195 33054 0.096850735973 100.00635584 255 64 206 21114 1783212
+47	272871 6878 196 33056 0.096850735973 100.00635584 255 46 188 16524 1105728
+48	279749 3101 310 22249 0.097450692058 99.097450692058 110 28 96 7404 503408
+49	282850 3103 311 22250 0.097450692058 99.097450692058 110 64 114 9420 809552
+50	285953 3111 312 22251 0.097457892058 99.097458212058 110 64 114 9420 809552
+51	289064 3111 313 22252 0.097457992058 99.097458312058 110 64 114 9420 809552
+52	292175 3111 313 22252 0.097457992058 99.097458312058 110 64 114 9420 809552
+53	295286 3109 314 22253 0.097457992058 99.097458312058 110 46 96 7440 506072
+54	298395 2850 320 22259 0.097996321822 99.097996321822 100 64 64 6400 409600
+55	301245 2850 321 22260 0.097996321822 99.097996321822 100 82 82 8200 672400
+56	304095 2850 322 22261 0.098003521822 99.098003521822 100 82 82 8200 672400
+57	306945 2850 323 22262 0.098003621822 99.098003621822 100 82 82 8200 672400
+58	309795 2850 323 22262 0.098003621822 99.098003621822 100 82 82 8200 672400
+59	312645 2850 324 22263 0.098003621822 99.098003621822 100 64 64 6400 409600
+60	315495 3075 330 22269 0.098632778686 99.098632778686 109 28 96 7356 501232
+61	318570 3077 331 22270 0.098632778686 99.098632778686 109 64 114 9354 805324
+62	321647 3085 332 22271 0.098640298686 99.098640298686 109 64 114 9354 805324
+63	324732 3085 333 22272 0.098640398686 99.098640398686 109 64 114 9354 805324
+64	327817 3085 333 22272 0.098640398686 99.098640398686 109 64 114 9354 805324
+65	330902 3083 334 22273 0.098640398686 99.098640398686 109 46 96 7392 503896
+66	333985 6786 439 33060 0.106744704792 100.00635584 252 28 152 16380 1094800
+67	340771 6787 440 33062 0.106744704792 100.00635584 252 64 170 20934 1768108
+68	347558 6808 441 33066 0.106751904792 100.00636272 252 64 170 20934 1768108
+69	354366 6808 442 33068 0.106752004792 100.00636282 252 64 170 20934 1768108
+70	361174 6808 442 33068 0.106752004792 100.00636282 252 64 170 20934 1768108
+71	367982 6807 443 33070 0.106752004792 100.00636282 252 46 152 16398 1096132
+72	374789 5035 449 32982 0.107198867093 100.00632094 184 28 120 12232 837888
+73	379824 5038 450 32984 0.107198867093 100.00632094 184 64 138 15580 1341816
+74	384862 5048 451 32988 0.107206067093 100.00632782 184 64 138 15580 1341816
+75	389910 5048 452 32990 0.107206167093 100.00632792 184 64 138 15580 1341816
+76	394958 5048 452 32990 0.107206167093 100.00632792 184 64 138 15580 1341816
+77	400006 5045 453 32992 0.107206167093 100.00632792 184 46 120 12268 840552
+78	405051 6705 459 33111 0.10852570675 100.00640698 253 28 120 16328 1079744
+79	411756 6707 460 33113 0.10852570675 100.00640698 253 64 138 20936 1755464
+80	418463 6724 461 33117 0.10853322675 100.00641386 253 64 138 20936 1755464
+81	425187 6697 462 33040 0.10853332675 100.00634886 252 64 138 20858 1749380
+82	431884 6697 462 33040 0.10853332675 100.00634886 252 64 138 20858 1749380
+83	438581 6695 463 33042 0.10853332675 100.00634886 252 46 120 16322 1080140
+84	445276 3374 613 22720 0.108847807824 100.0000698 120 28 132 8460 617744
+85	448650 3376 614 22721 0.108847807824 100.0000698 120 64 150 10656 965144
+86	452026 3387 615 22763 0.108855327824 100.00007556 120 64 150 10656 965144
+87	455413 3387 616 22764 0.108855427824 100.00007566 120 64 150 10656 965144
+88	458800 3387 616 22764 0.108855427824 100.00007566 120 64 150 10656 965144
+89	462187 3385 617 22765 0.108855427824 100.00007566 120 46 132 8496 620408
+90	465572 4956 776 33031 0.111736760164 100.00634188 181 28 120 12096 831040
+91	470528 4958 777 33033 0.111736760164 100.00634188 181 64 138 15372 1327120
+92	475486 4966 778 33037 0.111744280164 100.00634876 181 64 138 15372 1327120
+93	480452 4966 779 33039 0.111744380164 100.00634886 181 64 138 15372 1327120
+94	485418 4966 779 33039 0.111744380164 100.00634886 181 64 138 15372 1327120
+95	490384 4964 780 33041 0.111744380164 100.00634886 181 46 120 12114 832372
+96	495348 2851 1083 22329 0.118226617754 99.118226617754 100 64 64 6400 409600
+97	498199 2851 1084 22330 0.118226617754 99.118226617754 100 82 82 8200 672400
+98	501050 2851 1085 22331 0.118233817754 99.118233817754 100 82 82 8200 672400
+99	503901 2851 1086 22332 0.118233917754 99.118233917754 100 82 82 8200 672400
+100	506752 2951 1086 22332 0.118233917754 99.118233917754 100 82 82 8200 672400
+101	509703 2951 1087 22333 0.118233917754 99.118233917754 100 64 64 6400 409600
+102	512654 5116 1093 32968 0.119763288281 100.00631396 180 28 212 12112 859360
+103	517770 5119 1094 32970 0.119763288281 100.00631396 180 64 230 15388 1357672
+104	522889 5124 1095 32974 0.119770808281 100.00632084 180 64 230 15388 1357672
+105	528013 5124 1096 32976 0.119770908281 100.00632094 180 64 230 15388 1357672
+106	533137 5124 1096 32976 0.119770908281 100.00632094 180 64 230 15388 1357672
+107	538261 5121 1097 32978 0.119770908281 100.00632094 180 46 212 12148 862024
+108	543382 81 2145 22484 5.096414720613 100.00002654 3 28 28 84 2352
+109	543463 54 2151 22508 5.096420580613 100.0000324 2 28 28 56 1568
+110	543517 81 2315 22530 5.096907435973 100.0000374 3 28 28 84 2352
+111	543598 54 2319 22531 5.096908295973 100.0000374 2 28 28 56 1568
+112	543652 82 2325 22567 5.096913295973 100.00004326 3 28 28 84 2352
+113	543734 109 2334 22568 5.096914155973 100.00004326 4 28 28 112 3136
+114	543843 28 2600 2600 5.098690758686 5.098690758686 1 28 28 28 784
+115	543871 28 2604 2604 5.098691618686 5.098691618686 1 28 28 28 784
+116	543899 28 2610 2610 5.098696618686 5.098696618686 1 28 28 28 784
+117	543927 28 2619 2619 5.098697478686 5.098697478686 1 28 28 28 784
+118	543955 81 2682 22455 5.10859942675 100.0000187 3 28 28 84 2352
+119	544036 80 2688 22719 5.10860282675 100.0000698 3 28 28 84 2352
+120	544116 83 2814 22611 5.108920187824 100.0000511 3 28 28 84 2352
+121	544199 85 3926 22586 10.096422980613 100.00004524 3 28 28 84 2352
+122	544284 56 3932 22416 10.096428840613 100.00000586 2 28 28 56 1568
+123	544340 18 22347 22347 100 100 1 32 32 32 1024
+124	544358 18 22348 22348 100 100 1 32 32 32 1024
+125	544376 18 22349 22349 100 100 1 32 32 32 1024
+126	544394 1484 22350 33093 100 100.0064 65 32 32 2080 66560
+127	545878 18 22351 22351 100 100 1 32 32 32 1024
+128	545896 18 22352 22352 100 100 1 32 32 32 1024
+129	545914 18 22353 22353 100 100 1 32 32 32 1024
+130	545932 1484 22354 33094 100 100.0064 65 32 32 2080 66560
+131	547416 3285 22382 33095 100 100.0064 135 40 40 5400 216000
+132	550701 3283 22390 33096 100 100.0064 135 40 40 5400 216000
+133	553984 18 22397 22397 100 100 1 28 28 28 784
+134	554002 18 22401 22401 100 100 1 28 28 28 784
+135	554020 3339 22405 33099 100 100.0064 136 28 60 8128 486784
+136	557359 3337 22406 33100 100 100.0064 136 28 60 8128 486784
+137	560696 3339 22407 33101 100 100.0064 136 64 78 10594 825436
+138	564035 3337 22408 33102 100 100.0064 136 64 78 10594 825436
+139	567372 3669 22409 33103 100.00000576 100.00640688 136 64 78 10594 825436
+140	571041 3670 22410 33104 100.00000576 100.00640688 136 64 78 10594 825436
+141	574711 3669 22411 33105 100.00000586 100.00640698 136 64 78 10594 825436
+142	578380 3669 22411 33105 100.00000586 100.00640698 136 64 78 10594 825436
+143	582049 3670 22412 33106 100.00000586 100.00640698 136 64 78 10594 825436
+144	585719 3670 22412 33106 100.00000586 100.00640698 136 64 78 10594 825436
+145	589389 3669 22413 33107 100.00000586 100.00640698 136 46 60 8146 488116
+146	593058 3670 22414 33108 100.00000586 100.00640698 136 46 60 8146 488116
+147	596728 27 22676 22676 100.00006394 100.00006394 1 28 28 28 784
+148	596755 3492 22688 33088 100.00006506 100.0063698 134 40 40 5360 214400
+149	600247 3518 22688 33088 100.00006506 100.0063698 134 1 134 9045 811035
+150	603765 3491 22689 33087 100.00006506 100.0063698 134 40 40 5360 214400
+151	607256 3517 22689 33087 100.00006506 100.0063698 134 1 134 9045 811035
+152	610773 1745 22690 33011 100.00006506 100.0063349 67 32 32 2144 68608
+153	612518 1747 22691 33012 100.00006506 100.0063349 67 32 32 2144 68608
+154	614265 27 23000 23000 100.00010314 100.00010314 1 32 32 32 1024
+155	614292 17702 23000 23000 0.1 100 1000 0 0 0 0
+156	631994 35 23000 23000 100.00010314 100.00010314 1 0.00010314 0.00010314 0.00010314 1.06378596e-008
+157	632029 26 23021 23021 100.0001053 100.0001053 1 32 32 32 1024
+158	632055 17702 23021 23021 0.1 100 1000 0 0 0 0
+159	649757 33 23021 23021 100.0001053 100.0001053 1 0.0001053 0.0001053 0.0001053 1.108809e-008
+160	649790 27 23089 23089 100.00011452 100.00011452 1 32 32 32 1024
+161	649817 17702 23089 23089 0.1 100 1000 0 0 0 0
+162	667519 35 23089 23089 100.00011452 100.00011452 1 0.00011452 0.00011452 0.00011452 1.31148304e-008
+163	667554 1666 23090 33090 100.00011452 100.0063698 64 32 32 2048 65536
+164	669220 17702 23090 23090 0.1 100 1000 0 0 0 0
+165	686922 2116 23090 33090 100.00011452 100.0063698 64 6.98e-005 0.00011452 0.00451506 3.20501554e-007
+166	689038 27 23140 23140 100.00012236 100.00012236 1 32 32 32 1024
+167	689065 17702 23140 23140 0.1 100 1000 0 0 0 0
+168	706767 35 23140 23140 100.00012236 100.00012236 1 0.00012236 0.00012236 0.00012236 1.49719696e-008
+169	706802 27 23160 23160 100.00012452 100.00012452 1 32 32 32 1024
+170	706829 17702 23160 23160 0.1 100 1000 0 0 0 0
+171	724531 35 23160 23160 100.00012452 100.00012452 1 0.00012452 0.00012452 0.00012452 1.55052304e-008
+172	724566 1664 23182 33089 100.0001302 100.0063698 64 32 32 2048 65536
+173	726230 17702 23182 23182 0.1 100 1000 0 0 0 0
+174	743932 2112 23182 33089 100.0001302 100.0063698 64 6.98e-005 0.0001302 0.0045329 3.2465853e-007
+175	746044 27 23196 23196 100.00013236 100.00013236 1 32 32 32 1024
+176	746071 17702 23196 23196 0.1 100 1000 0 0 0 0
+177	763773 35 23196 23196 100.00013236 100.00013236 1 0.00013236 0.00013236 0.00013236 1.75191696e-008
+0	763808 25 33153 33153 100.00642792 100.00642792 1 60 60 60 3600
+21	763833 26 33120 33120 100.00641396 100.00641396 1 78 78 78 6084
+22	763859 26 33120 33120 100.00641396 100.00641396 1 78 78 78 6084
+23	763885 26 33122 33122 100.00641396 100.00641396 1 60 60 60 3600
+42	763911 26 33125 33125 100.00641396 100.00641396 1 60 60 60 3600
+43	763937 26 33127 33127 100.00641396 100.00641396 1 78 78 78 6084
+44	763963 26 33131 33131 100.00642084 100.00642084 1 78 78 78 6084
+45	763989 26 33133 33133 100.00642094 100.00642094 1 78 78 78 6084
+46	764015 26 33133 33133 100.00642094 100.00642094 1 78 78 78 6084
+47	764041 26 33135 33135 100.00642094 100.00642094 1 60 60 60 3600
+66	764067 26 33139 33139 100.00642094 100.00642094 1 60 60 60 3600
+67	764093 26 33141 33141 100.00642094 100.00642094 1 78 78 78 6084
+68	764119 26 33145 33145 100.00642782 100.00642782 1 78 78 78 6084
+69	764145 26 33147 33147 100.00642792 100.00642792 1 78 78 78 6084
+70	764171 26 33147 33147 100.00642792 100.00642792 1 78 78 78 6084
+71	764197 26 33149 33149 100.00642792 100.00642792 1 60 60 60 3600
+72	764223 26 33140 33140 100.00642094 100.00642094 1 60 60 60 3600
+73	764249 26 33142 33142 100.00642094 100.00642094 1 78 78 78 6084
+74	764275 26 33146 33146 100.00642782 100.00642782 1 78 78 78 6084
+75	764301 26 33148 33148 100.00642792 100.00642792 1 78 78 78 6084
+76	764327 26 33148 33148 100.00642792 100.00642792 1 78 78 78 6084
+77	764353 26 33150 33150 100.00642792 100.00642792 1 60 60 60 3600
+81	764379 26 33119 33119 100.00641396 100.00641396 1 78 78 78 6084
+82	764405 26 33119 33119 100.00641396 100.00641396 1 78 78 78 6084
+83	764431 26 33121 33121 100.00641396 100.00641396 1 60 60 60 3600
+102	764457 27 33126 33126 100.00641396 100.00641396 1 60 60 60 3600
+103	764484 27 33128 33128 100.00641396 100.00641396 1 78 78 78 6084
+104	764511 27 33132 33132 100.00642084 100.00642084 1 78 78 78 6084
+105	764538 27 33134 33134 100.00642094 100.00642094 1 78 78 78 6084
+106	764565 27 33134 33134 100.00642094 100.00642094 1 78 78 78 6084
+107	764592 27 33136 33136 100.00642094 100.00642094 1 60 60 60 3600
+0	764619 25 33232 33232 100.00646282 100.00646282 1 60 60 60 3600
+1	764644 50 33155 33234 100.00642792 100.00646282 2 78 78 156 12168
+2	764694 48 33159 33238 100.0064348 100.0064697 2 78 78 156 12168
+3	764742 48 33161 33240 100.0064349 100.0064698 2 78 78 156 12168
+4	764790 48 33161 33240 100.0064349 100.0064698 2 78 78 156 12168
+5	764838 48 33163 33242 100.0064349 100.0064698 2 60 60 120 7200
+6	764886 25 33217 33217 100.00645584 100.00645584 1 60 60 60 3600
+7	764911 25 33219 33219 100.00645584 100.00645584 1 78 78 78 6084
+8	764936 25 33223 33223 100.00646272 100.00646272 1 78 78 78 6084
+9	764961 25 33225 33225 100.00646282 100.00646282 1 78 78 78 6084
+10	764986 26 33225 33225 100.00646282 100.00646282 1 78 78 78 6084
+11	765012 26 33227 33227 100.00646282 100.00646282 1 60 60 60 3600
+12	765038 52 33154 33231 100.00642792 100.00646282 2 60 60 120 7200
+13	765090 52 33156 33233 100.00642792 100.00646282 2 78 78 156 12168
+14	765142 50 33160 33237 100.0064348 100.0064697 2 78 78 156 12168
+15	765192 50 33162 33239 100.0064349 100.0064698 2 78 78 156 12168
+16	765242 50 33162 33239 100.0064349 100.0064698 2 78 78 156 12168
+17	765292 50 33164 33241 100.0064349 100.0064698 2 60 60 120 7200
+18	765342 26 33270 33270 100.00650698 100.00650698 1 60 60 60 3600
+19	765368 26 33272 33272 100.00650698 100.00650698 1 78 78 78 6084
+20	765394 26 33276 33276 100.00651386 100.00651386 1 78 78 78 6084
+24	765420 26 33203 33203 100.00644886 100.00644886 1 60 60 60 3600
+25	765446 26 33205 33205 100.00644886 100.00644886 1 78 78 78 6084
+26	765472 26 33209 33209 100.00645574 100.00645574 1 78 78 78 6084
+27	765498 26 33211 33211 100.00645584 100.00645584 1 78 78 78 6084
+28	765524 26 33211 33211 100.00645584 100.00645584 1 78 78 78 6084
+29	765550 26 33213 33213 100.00645584 100.00645584 1 60 60 60 3600
+42	765576 26 33204 33204 100.00644886 100.00644886 1 60 60 60 3600
+43	765602 26 33206 33206 100.00644886 100.00644886 1 78 78 78 6084
+44	765628 26 33210 33210 100.00645574 100.00645574 1 78 78 78 6084
+45	765654 26 33212 33212 100.00645584 100.00645584 1 78 78 78 6084
+46	765680 26 33212 33212 100.00645584 100.00645584 1 78 78 78 6084
+47	765706 26 33214 33214 100.00645584 100.00645584 1 60 60 60 3600
+66	765732 26 33218 33218 100.00645584 100.00645584 1 60 60 60 3600
+67	765758 26 33220 33220 100.00645584 100.00645584 1 78 78 78 6084
+68	765784 26 33224 33224 100.00646272 100.00646272 1 78 78 78 6084
+69	765810 26 33226 33226 100.00646282 100.00646282 1 78 78 78 6084
+70	765836 26 33226 33226 100.00646282 100.00646282 1 78 78 78 6084
+71	765862 26 33228 33228 100.00646282 100.00646282 1 60 60 60 3600
+78	765888 52 33190 33269 100.00644188 100.00650698 2 60 60 120 7200
+79	765940 52 33192 33271 100.00644188 100.00650698 2 78 78 156 12168
+80	765992 52 33196 33275 100.00644876 100.00651386 2 78 78 156 12168
+81	766044 26 33198 33198 100.00644886 100.00644886 1 78 78 78 6084
+82	766070 26 33198 33198 100.00644886 100.00644886 1 78 78 78 6084
+83	766096 26 33200 33200 100.00644886 100.00644886 1 60 60 60 3600
+90	766122 26 33189 33189 100.00644188 100.00644188 1 60 60 60 3600
+91	766148 26 33191 33191 100.00644188 100.00644188 1 78 78 78 6084
+92	766174 26 33195 33195 100.00644876 100.00644876 1 78 78 78 6084
+93	766200 26 33197 33197 100.00644886 100.00644886 1 78 78 78 6084
+94	766226 26 33197 33197 100.00644886 100.00644886 1 78 78 78 6084
+95	766252 26 33199 33199 100.00644886 100.00644886 1 60 60 60 3600
+126	766278 23 33251 33251 100.0065 100.0065 1 32 32 32 1024
+130	766301 23 33252 33252 100.0065 100.0065 1 32 32 32 1024
+131	766324 49 33172 33253 100.0064349 100.0065 2 40 40 80 3200
+132	766373 49 33171 33254 100.0064349 100.0065 2 40 40 80 3200
+135	766422 49 33176 33257 100.0064349 100.0065 2 60 60 120 7200
+136	766471 49 33175 33258 100.0064349 100.0065 2 60 60 120 7200
+137	766520 49 33178 33259 100.0064349 100.0065 2 78 78 156 12168
+138	766569 49 33177 33260 100.0064349 100.0065 2 78 78 156 12168
+139	766618 54 33182 33261 100.00644178 100.00650688 2 78 78 156 12168
+140	766672 54 33181 33262 100.00644178 100.00650688 2 78 78 156 12168
+141	766726 54 33184 33263 100.00644188 100.00650698 2 78 78 156 12168
+142	766780 54 33184 33263 100.00644188 100.00650698 2 78 78 156 12168
+143	766834 54 33183 33264 100.00644188 100.00650698 2 78 78 156 12168
+144	766888 54 33183 33264 100.00644188 100.00650698 2 78 78 156 12168
+145	766942 54 33186 33265 100.00644188 100.00650698 2 60 60 120 7200
+146	766996 54 33185 33266 100.00644188 100.00650698 2 60 60 120 7200
+148	767050 52 33167 33246 100.0064349 100.0064698 2 40 40 80 3200
+149	767102 54 33167 33246 100.0064349 100.0064698 2 135 136 271 36721
+150	767156 52 33168 33245 100.0064349 100.0064698 2 40 40 80 3200
+151	767208 54 33168 33245 100.0064349 100.0064698 2 135 136 271 36721
+152	767262 26 33169 33169 100.0064349 100.0064349 1 32 32 32 1024
+153	767288 26 33170 33170 100.0064349 100.0064349 1 32 32 32 1024
+163	767314 26 33248 33248 100.0064698 100.0064698 1 32 32 32 1024
+165	767340 33 33248 33248 100.0064698 100.0064698 1 6.98e-005 6.98e-005 6.98e-005 4.87204e-009
+172	767373 26 33247 33247 100.0064698 100.0064698 1 32 32 32 1024
+174	767399 33 33247 33247 100.0064698 100.0064698 1 6.98e-005 6.98e-005 6.98e-005 4.87204e-009
+0	767432 75 33311 33469 100.00652792 100.00662792 3 60 60 180 10800
+1	767507 75 33313 33471 100.00652792 100.00662792 3 78 78 234 18252
+2	767582 72 33317 33475 100.0065348 100.0066348 3 78 78 234 18252
+3	767654 72 33319 33477 100.0065349 100.0066349 3 78 78 234 18252
+4	767726 72 33319 33477 100.0065349 100.0066349 3 78 78 234 18252
+5	767798 72 33321 33479 100.0065349 100.0066349 3 60 60 180 10800
+6	767870 25 33375 33375 100.00655584 100.00655584 1 60 60 60 3600
+7	767895 25 33377 33377 100.00655584 100.00655584 1 78 78 78 6084
+8	767920 25 33381 33381 100.00656272 100.00656272 1 78 78 78 6084
+9	767945 25 33383 33383 100.00656282 100.00656282 1 78 78 78 6084
+10	767970 26 33383 33383 100.00656282 100.00656282 1 78 78 78 6084
+11	767996 26 33385 33385 100.00656282 100.00656282 1 60 60 60 3600
+12	768022 78 33312 33470 100.00652792 100.00662792 3 60 60 180 10800
+13	768100 78 33314 33472 100.00652792 100.00662792 3 78 78 234 18252
+14	768178 75 33318 33476 100.0065348 100.0066348 3 78 78 234 18252
+15	768253 75 33320 33478 100.0065349 100.0066349 3 78 78 234 18252
+16	768328 75 33320 33478 100.0065349 100.0066349 3 78 78 234 18252
+17	768403 75 33322 33480 100.0065349 100.0066349 3 60 60 180 10800
+18	768478 26 33428 33428 100.00660698 100.00660698 1 60 60 60 3600
+19	768504 26 33430 33430 100.00660698 100.00660698 1 78 78 78 6084
+20	768530 26 33434 33434 100.00661386 100.00661386 1 78 78 78 6084
+21	768556 52 33278 33436 100.00651396 100.00661396 2 78 78 156 12168
+22	768608 52 33278 33436 100.00651396 100.00661396 2 78 78 156 12168
+23	768660 52 33280 33438 100.00651396 100.00661396 2 60 60 120 7200
+24	768712 52 33361 33519 100.00654886 100.00664886 2 60 60 120 7200
+25	768764 52 33363 33521 100.00654886 100.00664886 2 78 78 156 12168
+26	768816 26 33367 33367 100.00655574 100.00655574 1 78 78 78 6084
+27	768842 26 33369 33369 100.00655584 100.00655584 1 78 78 78 6084
+28	768868 26 33369 33369 100.00655584 100.00655584 1 78 78 78 6084
+29	768894 26 33371 33371 100.00655584 100.00655584 1 60 60 60 3600
+42	768920 104 33283 33520 100.00651396 100.00664886 4 60 60 240 14400
+43	769024 104 33285 33522 100.00651396 100.00664886 4 78 78 312 24336
+44	769128 78 33289 33447 100.00652084 100.00662084 3 78 78 234 18252
+45	769206 78 33291 33449 100.00652094 100.00662094 3 78 78 234 18252
+46	769284 78 33291 33449 100.00652094 100.00662094 3 78 78 234 18252
+47	769362 78 33293 33451 100.00652094 100.00662094 3 60 60 180 10800
+66	769440 78 33297 33455 100.00652094 100.00662094 3 60 60 180 10800
+67	769518 78 33299 33457 100.00652094 100.00662094 3 78 78 234 18252
+68	769596 78 33303 33461 100.00652782 100.00662782 3 78 78 234 18252
+69	769674 78 33305 33463 100.00652792 100.00662792 3 78 78 234 18252
+70	769752 78 33305 33463 100.00652792 100.00662792 3 78 78 234 18252
+71	769830 78 33307 33465 100.00652792 100.00662792 3 60 60 180 10800
+72	769908 52 33298 33456 100.00652094 100.00662094 2 60 60 120 7200
+73	769960 52 33300 33458 100.00652094 100.00662094 2 78 78 156 12168
+74	770012 52 33304 33462 100.00652782 100.00662782 2 78 78 156 12168
+75	770064 52 33306 33464 100.00652792 100.00662792 2 78 78 156 12168
+76	770116 52 33306 33464 100.00652792 100.00662792 2 78 78 156 12168
+77	770168 52 33308 33466 100.00652792 100.00662792 2 60 60 120 7200
+78	770220 78 33348 33506 100.00654188 100.00664188 3 60 60 180 10800
+79	770298 78 33350 33508 100.00654188 100.00664188 3 78 78 234 18252
+80	770376 78 33354 33512 100.00654876 100.00664876 3 78 78 234 18252
+81	770454 104 33277 33514 100.00651396 100.00664886 4 78 78 312 24336
+82	770558 104 33277 33514 100.00651396 100.00664886 4 78 78 312 24336
+83	770662 104 33279 33516 100.00651396 100.00664886 4 60 60 240 14400
+90	770766 52 33347 33505 100.00654188 100.00664188 2 60 60 120 7200
+91	770818 52 33349 33507 100.00654188 100.00664188 2 78 78 156 12168
+92	770870 52 33353 33511 100.00654876 100.00664876 2 78 78 156 12168
+93	770922 52 33355 33513 100.00654886 100.00664886 2 78 78 156 12168
+94	770974 52 33355 33513 100.00654886 100.00664886 2 78 78 156 12168
+95	771026 52 33357 33515 100.00654886 100.00664886 2 60 60 120 7200
+102	771078 54 33284 33442 100.00651396 100.00661396 2 60 60 120 7200
+103	771132 54 33286 33444 100.00651396 100.00661396 2 78 78 156 12168
+104	771186 54 33290 33448 100.00652084 100.00662084 2 78 78 156 12168
+105	771240 54 33292 33450 100.00652094 100.00662094 2 78 78 156 12168
+106	771294 54 33292 33450 100.00652094 100.00662094 2 78 78 156 12168
+107	771348 54 33294 33452 100.00652094 100.00662094 2 60 60 120 7200
+126	771402 23 33409 33409 100.0066 100.0066 1 32 32 32 1024
+130	771425 23 33410 33410 100.0066 100.0066 1 32 32 32 1024
+131	771448 75 33330 33488 100.0065349 100.0066349 3 40 40 120 4800
+132	771523 75 33329 33487 100.0065349 100.0066349 3 40 40 120 4800
+135	771598 75 33334 33492 100.0065349 100.0066349 3 60 60 180 10800
+136	771673 75 33333 33491 100.0065349 100.0066349 3 60 60 180 10800
+137	771748 75 33336 33494 100.0065349 100.0066349 3 78 78 234 18252
+138	771823 75 33335 33493 100.0065349 100.0066349 3 78 78 234 18252
+139	771898 81 33340 33498 100.00654178 100.00664178 3 78 78 234 18252
+140	771979 81 33339 33497 100.00654178 100.00664178 3 78 78 234 18252
+141	772060 81 33342 33500 100.00654188 100.00664188 3 78 78 234 18252
+142	772141 81 33342 33500 100.00654188 100.00664188 3 78 78 234 18252
+143	772222 81 33341 33499 100.00654188 100.00664188 3 78 78 234 18252
+144	772303 81 33341 33499 100.00654188 100.00664188 3 78 78 234 18252
+145	772384 81 33344 33502 100.00654188 100.00664188 3 60 60 180 10800
+146	772465 81 33343 33501 100.00654188 100.00664188 3 60 60 180 10800
+148	772546 78 33325 33483 100.0065349 100.0066349 3 40 40 120 4800
+149	772624 81 33325 33483 100.0065349 100.0066349 3 137 139 414 57134
+150	772705 78 33326 33484 100.0065349 100.0066349 3 40 40 120 4800
+151	772783 81 33326 33484 100.0065349 100.0066349 3 137 139 414 57134
+152	772864 52 33327 33485 100.0065349 100.0066349 2 32 32 64 2048
+153	772916 52 33328 33486 100.0065349 100.0066349 2 32 32 64 2048
+163	772968 26 33406 33406 100.0065698 100.0065698 1 32 32 32 1024
+165	772994 33 33406 33406 100.0065698 100.0065698 1 6.98e-005 6.98e-005 6.98e-005 4.87204e-009
+172	773027 26 33405 33405 100.0065698 100.0065698 1 32 32 32 1024
+174	773053 33 33405 33405 100.0065698 100.0065698 1 6.98e-005 6.98e-005 6.98e-005 4.87204e-009
+0	773086 12950 33548 74391 100.00666282 100.03252792 518 60 60 31080 1864800
+1	786036 12950 33550 74393 100.00666282 100.03252792 518 78 78 40404 3151512
+2	798986 12432 33554 74397 100.0066697 100.0325348 518 78 78 40404 3151512
+3	811418 12432 33556 74399 100.0066698 100.0325349 518 78 78 40404 3151512
+4	823850 12432 33556 74399 100.0066698 100.0325349 518 78 78 40404 3151512
+5	836282 12432 33558 74401 100.0066698 100.0325349 518 60 60 31080 1864800
+6	848714 6475 33533 74297 100.00665584 100.03245584 259 60 60 15540 932400
+7	855189 6475 33535 74299 100.00665584 100.03245584 259 78 78 20202 1575756
+8	861664 6475 33539 74303 100.00666272 100.03246272 259 78 78 20202 1575756
+9	868139 6475 33541 74305 100.00666282 100.03246282 259 78 78 20202 1575756
+10	874614 6734 33541 74305 100.00666282 100.03246282 259 78 78 20202 1575756
+11	881348 6734 33543 74307 100.00666282 100.03246282 259 60 60 15540 932400
+12	888082 13468 33547 74392 100.00666282 100.03252792 518 60 60 31080 1864800
+13	901550 13468 33549 74394 100.00666282 100.03252792 518 78 78 40404 3151512
+14	915018 12950 33553 74398 100.0066697 100.0325348 518 78 78 40404 3151512
+15	927968 12950 33555 74400 100.0066698 100.0325349 518 78 78 40404 3151512
+16	940918 12950 33555 74400 100.0066698 100.0325349 518 78 78 40404 3151512
+17	953868 12950 33557 74402 100.0066698 100.0325349 518 60 60 31080 1864800
+18	966818 6734 33586 74350 100.00670698 100.03250698 259 60 60 15540 932400
+19	973552 6734 33588 74352 100.00670698 100.03250698 259 78 78 20202 1575756
+20	980286 6734 33592 74356 100.00671386 100.03251386 259 78 78 20202 1575756
+21	987020 6734 33594 74358 100.00671396 100.03251396 259 78 78 20202 1575756
+22	993754 6734 33594 74358 100.00671396 100.03251396 259 78 78 20202 1575756
+23	1000488 6734 33596 74360 100.00671396 100.03251396 259 60 60 15540 932400
+24	1007222 6708 33677 74283 100.00674886 100.03244886 258 60 60 15480 928800
+25	1013930 6708 33679 74285 100.00674886 100.03244886 258 78 78 20124 1569672
+26	1020638 6734 33525 74289 100.00665574 100.03245574 259 78 78 20202 1575756
+27	1027372 6734 33527 74291 100.00665584 100.03245584 259 78 78 20202 1575756
+28	1034106 6734 33527 74291 100.00665584 100.03245584 259 78 78 20202 1575756
+29	1040840 6734 33529 74293 100.00665584 100.03245584 259 60 60 15540 932400
+42	1047574 13442 33599 74363 100.00671396 100.03251396 517 60 60 31020 1861200
+43	1061016 13442 33601 74365 100.00671396 100.03251396 517 78 78 40326 3145428
+44	1074458 13468 33526 74369 100.00665574 100.03252084 518 78 78 40404 3151512
+45	1087926 13468 33528 74371 100.00665584 100.03252094 518 78 78 40404 3151512
+46	1101394 13468 33528 74371 100.00665584 100.03252094 518 78 78 40404 3151512
+47	1114862 13468 33530 74373 100.00665584 100.03252094 518 60 60 31080 1864800
+66	1128330 13468 33534 74377 100.00665584 100.03252094 518 60 60 31080 1864800
+67	1141798 13468 33536 74379 100.00665584 100.03252094 518 78 78 40404 3151512
+68	1155266 13468 33540 74383 100.00666272 100.03252782 518 78 78 40404 3151512
+69	1168734 13468 33542 74385 100.00666282 100.03252792 518 78 78 40404 3151512
+70	1182202 13468 33542 74385 100.00666282 100.03252792 518 78 78 40404 3151512
+71	1195670 13468 33544 74387 100.00666282 100.03252792 518 60 60 31080 1864800
+72	1209138 6734 33614 74378 100.00672094 100.03252094 259 60 60 15540 932400
+73	1215872 6734 33616 74380 100.00672094 100.03252094 259 78 78 20202 1575756
+74	1222606 6734 33620 74384 100.00672782 100.03252782 259 78 78 20202 1575756
+75	1229340 6734 33622 74386 100.00672792 100.03252792 259 78 78 20202 1575756
+76	1236074 6734 33622 74386 100.00672792 100.03252792 259 78 78 20202 1575756
+77	1242808 6734 33624 74388 100.00672792 100.03252792 259 60 60 15540 932400
+78	1249542 13442 33585 74349 100.00670698 100.03250698 517 60 60 31020 1861200
+79	1262984 13442 33587 74351 100.00670698 100.03250698 517 78 78 40326 3145428
+80	1276426 13442 33591 74355 100.00671386 100.03251386 517 78 78 40326 3145428
+81	1289868 13442 33593 74357 100.00671396 100.03251396 517 78 78 40326 3145428
+82	1303310 13442 33593 74357 100.00671396 100.03251396 517 78 78 40326 3145428
+83	1316752 13442 33595 74359 100.00671396 100.03251396 517 60 60 31020 1861200
+90	1330194 6708 33663 74269 100.00674188 100.03244188 258 60 60 15480 928800
+91	1336902 6708 33665 74271 100.00674188 100.03244188 258 78 78 20124 1569672
+92	1343610 6708 33669 74275 100.00674876 100.03244876 258 78 78 20124 1569672
+93	1350318 6708 33671 74277 100.00674886 100.03244886 258 78 78 20124 1569672
+94	1357026 6708 33671 74277 100.00674886 100.03244886 258 78 78 20124 1569672
+95	1363734 6708 33673 74279 100.00674886 100.03244886 258 60 60 15480 928800
+102	1370442 6993 33600 74364 100.00671396 100.03251396 259 60 60 15540 932400
+103	1377435 6993 33602 74366 100.00671396 100.03251396 259 78 78 20202 1575756
+104	1384428 6993 33606 74370 100.00672084 100.03252084 259 78 78 20202 1575756
+105	1391421 6993 33608 74372 100.00672094 100.03252094 259 78 78 20202 1575756
+106	1398414 6993 33608 74372 100.00672094 100.03252094 259 78 78 20202 1575756
+107	1405407 6993 33610 74374 100.00672094 100.03252094 259 60 60 15540 932400
+126	1412400 5928 33567 74331 100.0067 100.0325 259 32 32 8288 265216
+130	1418328 5928 33568 74332 100.0067 100.0325 259 32 32 8288 265216
+131	1424256 12636 33569 74333 100.0067 100.0325 517 40 40 20680 827200
+132	1436892 12636 33570 74334 100.0067 100.0325 517 40 40 20680 827200
+135	1449528 12636 33573 74337 100.0067 100.0325 517 60 60 31020 1861200
+136	1462164 12636 33574 74338 100.0067 100.0325 517 60 60 31020 1861200
+137	1474800 12636 33575 74339 100.0067 100.0325 517 78 78 40326 3145428
+138	1487436 12636 33576 74340 100.0067 100.0325 517 78 78 40326 3145428
+139	1500072 13959 33577 74341 100.00670688 100.03250688 517 78 78 40326 3145428
+140	1514031 13959 33578 74342 100.00670688 100.03250688 517 78 78 40326 3145428
+141	1527990 13959 33579 74343 100.00670698 100.03250698 517 78 78 40326 3145428
+142	1541949 13959 33579 74343 100.00670698 100.03250698 517 78 78 40326 3145428
+143	1555908 13959 33580 74344 100.00670698 100.03250698 517 78 78 40326 3145428
+144	1569867 13959 33580 74344 100.00670698 100.03250698 517 78 78 40326 3145428
+145	1583826 13959 33581 74345 100.00670698 100.03250698 517 60 60 31020 1861200
+146	1597785 13959 33582 74346 100.00670698 100.03250698 517 60 60 31020 1861200
+148	1611744 13468 33562 74405 100.0066698 100.0325349 518 40 40 20720 828800
+149	1625212 13986 33562 74405 100.0066698 100.0325349 518 140 657 206423 93842175
+150	1639198 13442 33561 74325 100.0066698 100.0324698 517 40 40 20680 827200
+151	1652640 13959 33561 74325 100.0066698 100.0324698 517 140 656 205766 93410526
+152	1666599 6708 33643 74249 100.0067349 100.0324349 258 32 32 8256 264192
+153	1673307 6708 33644 74250 100.0067349 100.0324349 258 32 32 8256 264192
+163	1680015 6734 33564 74328 100.0066698 100.0324698 259 32 32 8288 265216
+164	1686749 101 38936 70536 100.0100698 100.0300698 3 2560000 2567677.6102802 7687677.6102802 19700168310334
+165	1686850 8547 33564 74328 100.0066698 100.0324698 259 6.98e-005 6.98e-005 0.0180782 1.26185836e-006
+172	1695397 6734 33563 74327 100.0066698 100.0324698 259 32 32 8288 265216
+173	1702131 101 38935 70535 100.0100698 100.0300698 3 2560000 2567677.6102802 7687677.6102802 19700168310334
+174	1702232 8547 33563 74327 100.0066698 100.0324698 259 6.98e-005 6.98e-005 0.0180782 1.26185836e-006
+

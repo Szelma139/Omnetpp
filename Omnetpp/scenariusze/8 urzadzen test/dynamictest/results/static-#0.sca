@@ -1,0 +1,3309 @@
+version 2
+run static-0-20190119-12:09:12-8548
+attr configname static
+attr datetime 20190119-12:09:12
+attr experiment static
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network DynamicTest
+attr processid 8548
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.scenarioManager.script "xml(\"<empty/>\")"
+param **.ospf.ospfConfig "xmldoc(\"ASConfig.xml\")"
+param **.ospf.helloInterval 1s
+param **.ospf.retransmissionInterval 5s
+param **.ospf.interfaceTransmissionDelay 1s
+param **.ospf.routerDeadInterval 4s
+param **.ospf.authentication.typename "\"NullType\""
+param **.ospf.authenticationKey "\"0x00\""
+param **.H*.numApps 5
+param **.app[0].typename "\"UdpBasicApp\""
+param **.app[0].destPort 1234
+param **.app[0].messageLength "32 bytes"
+param **.app[0].sendInterval 0.1s
+param **.app[0].startTime 100s
+param **.app[0].stopTime "this.startTime + 400s"
+param **.H2.app[0].destAddresses "\"H1\""
+param **.H1.app[0].destAddresses "\"H2\""
+param **.app[1].typename "\"UdpEchoApp\""
+param **.app[1].localPort 1234
+param **.app[2].typename "\"UdpBasicApp\""
+param **.app[2].destPort 1234
+param **.app[2].messageLength "32 bytes"
+param **.app[2].sendInterval 0.11s
+param **.app[2].startTime 100s
+param **.app[2].stopTime "this.startTime + 400s"
+param **.H2.app[2].destAddresses "\"H1\""
+param **.H1.app[2].destAddresses "\"H2\""
+param **.app[3].typename "\"UdpBasicApp\""
+param **.app[3].destPort 1234
+param **.app[3].messageLength "32 bytes"
+param **.app[3].sendInterval 0.11s
+param **.app[3].startTime 100s
+param **.app[3].stopTime "this.startTime + 400s"
+param **.H2.app[3].destAddresses "\"H1\""
+param **.H1.app[3].destAddresses "\"H2\""
+param **.app[4].typename "\"UdpBasicApp\""
+param **.app[4].destPort 1234
+param **.app[4].messageLength "32 bytes"
+param **.app[4].sendInterval 0.0001s
+param **.app[4].startTime 100s
+param **.app[4].stopTime "this.startTime + 400s"
+param **.H2.app[4].destAddresses "\"H1\""
+param **.H1.app[4].destAddresses "\"H2\""
+param **.arp.cacheTimeout 1s
+param *.configurator.addStaticRoutes false
+param *.configurator.addSubnetRoutes false
+param *.configurator.addDefaultRoutes false
+
+scalar DynamicTest.H1.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.H1.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.H1.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.H1.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.H1.eth[0].mac full-duplex 1
+scalar DynamicTest.H1.eth[0].mac "frames/sec sent" 6.5778598998594
+scalar DynamicTest.H1.eth[0].mac "frames/sec rcvd" 7.577534656677
+scalar DynamicTest.H1.eth[0].mac "bits/sec sent" 4103.4649417847
+scalar DynamicTest.H1.eth[0].mac "bits/sec rcvd" 4759.251582257
+scalar DynamicTest.H1.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.H1.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.H1.eth[0].mac txPk:count 658
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.H1.eth[0].mac txPk:sum(packetBytes) 51310
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].mac packetReceivedFromUpper:count 658
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.H1.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 51310
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].mac passedUpPk:count 758
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.H1.eth[0].mac passedUpPk:sum(packetBytes) 59510
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.H1.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.H1.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.H1.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.H1.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.H1.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.H1.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.H1.eth[0].mac rxPkOk:count 758
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.H1.eth[0].mac rxPkOk:sum(packetBytes) 59510
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.H1.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.H1.eth[0].encap decapPk:count 758
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.H1.eth[0].encap decapPk:sum(packetBytes) 45866
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.H1.eth[0].encap encapPk:count 658
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.H1.eth[0].encap encapPk:sum(packetBytes) 39448
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.H1.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.H1.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.H1.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.H1.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.H1.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.H1.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.H1.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.H1.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.H1.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.H1.ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.H1.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.H1.udp packetReceived:count 656
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H1.udp packetReceived:sum(packetBytes) 26240
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar DynamicTest.H1.udp packetSent:count 657
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H1.udp packetSent:sum(packetBytes) 26280
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.H1.udp passedUpPk:count 656
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar DynamicTest.H1.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar DynamicTest.H1.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar DynamicTest.H1.app[0] "packets sent" 1
+scalar DynamicTest.H1.app[0] "packets received" 1
+scalar DynamicTest.H1.app[0] packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H1.app[0] packetReceived:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DynamicTest.H1.app[0] rcvdPkLifetime:stats
+field count 1
+field mean 0.0001053
+field stddev nan
+field min 0.0001053
+field max 0.0001053
+field sum 0.0001053
+field sqrsum 1.108809e-008
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar DynamicTest.H1.app[0] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H1.app[0] packetSent:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.H1.app[1] echoedPk:count 328
+attr interpolationmode none
+attr source packetSent
+attr title "packets echoed, count"
+scalar DynamicTest.H1.app[1] echoedPk:sum(packetBytes) 10496
+attr interpolationmode none
+attr source packetSent
+attr title "packets echoed, sum(packetBytes)"
+scalar DynamicTest.H1.app[2] "packets sent" 1
+scalar DynamicTest.H1.app[2] "packets received" 1
+scalar DynamicTest.H1.app[2] packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H1.app[2] packetReceived:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DynamicTest.H1.app[2] rcvdPkLifetime:stats
+field count 1
+field mean 0.00011452
+field stddev nan
+field min 0.00011452
+field max 0.00011452
+field sum 0.00011452
+field sqrsum 1.31148304e-008
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar DynamicTest.H1.app[2] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H1.app[2] packetSent:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.H1.app[3] "packets sent" 1
+scalar DynamicTest.H1.app[3] "packets received" 1
+scalar DynamicTest.H1.app[3] packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H1.app[3] packetReceived:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DynamicTest.H1.app[3] rcvdPkLifetime:stats
+field count 1
+field mean 0.00012236
+field stddev nan
+field min 0.00012236
+field max 0.00012236
+field sum 0.00012236
+field sqrsum 1.49719696e-008
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar DynamicTest.H1.app[3] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H1.app[3] packetSent:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.H1.app[4] "packets sent" 326
+scalar DynamicTest.H1.app[4] "packets received" 325
+scalar DynamicTest.H1.app[4] packetReceived:count 325
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H1.app[4] packetReceived:sum(packetBytes) 10400
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DynamicTest.H1.app[4] rcvdPkLifetime:stats
+field count 325
+field mean 7.0002153846153e-005
+field stddev 3.362359039369e-006
+field min 6.98e-005
+field max 0.0001302
+field sum 0.0227507
+field sqrsum 1.59626097e-006
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar DynamicTest.H1.app[4] packetSent:count 326
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H1.app[4] packetSent:sum(packetBytes) 10432
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.R1.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.R1.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R1.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.R1.eth[0].mac full-duplex 1
+scalar DynamicTest.R1.eth[0].mac "frames/sec sent" 7.577534656677
+scalar DynamicTest.R1.eth[0].mac "frames/sec rcvd" 6.5778598998594
+scalar DynamicTest.R1.eth[0].mac "bits/sec sent" 4759.251582257
+scalar DynamicTest.R1.eth[0].mac "bits/sec rcvd" 4103.4649417847
+scalar DynamicTest.R1.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.R1.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.R1.eth[0].mac txPk:count 758
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.R1.eth[0].mac txPk:sum(packetBytes) 59510
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].mac packetReceivedFromUpper:count 758
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.R1.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 59510
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].mac passedUpPk:count 658
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R1.eth[0].mac passedUpPk:sum(packetBytes) 51310
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.R1.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.R1.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.R1.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.R1.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.R1.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.R1.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.R1.eth[0].mac rxPkOk:count 658
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.R1.eth[0].mac rxPkOk:sum(packetBytes) 51310
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.R1.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.R1.eth[0].encap decapPk:count 658
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.R1.eth[0].encap decapPk:sum(packetBytes) 39466
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.R1.eth[0].encap encapPk:count 758
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.R1.eth[0].encap encapPk:sum(packetBytes) 45848
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].mac "simulated time" 100.0325349
+scalar DynamicTest.R1.eth[1].mac full-duplex 1
+scalar DynamicTest.R1.eth[1].mac "frames/sec sent" 1.1996097081811
+scalar DynamicTest.R1.eth[1].mac "frames/sec rcvd" 4.4585494154062
+scalar DynamicTest.R1.eth[1].mac "bits/sec sent" 852.20273669182
+scalar DynamicTest.R1.eth[1].mac "bits/sec rcvd" 2880.3428833233
+scalar DynamicTest.R1.eth[1].mac "rx channel idle (%)" 100
+scalar DynamicTest.R1.eth[1].mac "rx channel utilization (%)" 0
+scalar DynamicTest.R1.eth[1].mac txPk:count 120
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.R1.eth[1].mac txPk:sum(packetBytes) 10656
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].mac packetReceivedFromUpper:count 120
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.R1.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 10656
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].mac passedUpPk:count 446
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R1.eth[1].mac passedUpPk:sum(packetBytes) 36016
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.R1.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.R1.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.R1.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.R1.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.R1.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.R1.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.R1.eth[1].mac rxPkOk:count 446
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.R1.eth[1].mac rxPkOk:sum(packetBytes) 36016
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.R1.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.R1.eth[1].encap decapPk:count 446
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.R1.eth[1].encap decapPk:sum(packetBytes) 27988
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.R1.eth[1].encap encapPk:count 120
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.R1.eth[1].encap encapPk:sum(packetBytes) 8460
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].mac "simulated time" 100.0325349
+scalar DynamicTest.R1.eth[2].mac full-duplex 1
+scalar DynamicTest.R1.eth[2].mac "frames/sec sent" 7.747479365336
+scalar DynamicTest.R1.eth[2].mac "frames/sec rcvd" 4.4585494154062
+scalar DynamicTest.R1.eth[2].mac "bits/sec sent" 4930.5558485852
+scalar DynamicTest.R1.eth[2].mac "bits/sec rcvd" 2875.7043924516
+scalar DynamicTest.R1.eth[2].mac "rx channel idle (%)" 100
+scalar DynamicTest.R1.eth[2].mac "rx channel utilization (%)" 0
+scalar DynamicTest.R1.eth[2].mac txPk:count 775
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.R1.eth[2].mac txPk:sum(packetBytes) 61652
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].mac packetReceivedFromUpper:count 775
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.R1.eth[2].mac packetReceivedFromUpper:sum(packetBytes) 61652
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].mac passedUpPk:count 446
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R1.eth[2].mac passedUpPk:sum(packetBytes) 35958
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.R1.eth[2].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.R1.eth[2].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.R1.eth[2].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.R1.eth[2].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.R1.eth[2].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.R1.eth[2].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.R1.eth[2].mac rxPkOk:count 446
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.R1.eth[2].mac rxPkOk:sum(packetBytes) 35958
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.R1.eth[2].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.R1.eth[2].encap decapPk:count 446
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.R1.eth[2].encap decapPk:sum(packetBytes) 27930
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.R1.eth[2].encap encapPk:count 775
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.R1.eth[2].encap encapPk:sum(packetBytes) 47648
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].mac "simulated time" 100.0325349
+scalar DynamicTest.R1.eth[3].mac full-duplex 1
+scalar DynamicTest.R1.eth[3].mac "frames/sec sent" 0
+scalar DynamicTest.R1.eth[3].mac "frames/sec rcvd" 0.99967475681754
+scalar DynamicTest.R1.eth[3].mac "bits/sec sent" 0
+scalar DynamicTest.R1.eth[3].mac "bits/sec rcvd" 655.78664047231
+scalar DynamicTest.R1.eth[3].mac "rx channel idle (%)" 100
+scalar DynamicTest.R1.eth[3].mac "rx channel utilization (%)" 0
+scalar DynamicTest.R1.eth[3].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.R1.eth[3].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.R1.eth[3].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].mac passedUpPk:count 100
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R1.eth[3].mac passedUpPk:sum(packetBytes) 8200
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.R1.eth[3].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.R1.eth[3].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.R1.eth[3].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.R1.eth[3].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.R1.eth[3].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.R1.eth[3].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.R1.eth[3].mac rxPkOk:count 100
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.R1.eth[3].mac rxPkOk:sum(packetBytes) 8200
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.R1.eth[3].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.R1.eth[3].encap decapPk:count 100
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.R1.eth[3].encap decapPk:sum(packetBytes) 6400
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.R1.eth[3].encap encapPk:count 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.R1.eth[3].encap encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.R1.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.R1.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.R1.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.R1.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.R1.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.R1.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.arp arpReplySent:count 3
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.R1.ipv4.arp arpReplySent:sum(packetBytes) 84
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.arp arpRequestSent:count 3
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.R1.ipv4.arp arpRequestSent:sum(packetBytes) 84
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.R1.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.R1.ipv4.arp arpResolutionCompleted:count 6
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.R1.ipv4.arp arpResolutionInitiated:count 3
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.RA.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.RA.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.RA.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RA.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.RA.eth[0].mac full-duplex 1
+scalar DynamicTest.RA.eth[0].mac "frames/sec sent" 4.4585494154062
+scalar DynamicTest.RA.eth[0].mac "frames/sec rcvd" 1.1996097081811
+scalar DynamicTest.RA.eth[0].mac "bits/sec sent" 2880.3428833233
+scalar DynamicTest.RA.eth[0].mac "bits/sec rcvd" 852.20273669182
+scalar DynamicTest.RA.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.RA.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RA.eth[0].mac txPk:count 446
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RA.eth[0].mac txPk:sum(packetBytes) 36016
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].mac packetReceivedFromUpper:count 446
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RA.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 36016
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].mac passedUpPk:count 120
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RA.eth[0].mac passedUpPk:sum(packetBytes) 10656
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RA.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RA.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RA.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RA.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RA.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RA.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RA.eth[0].mac rxPkOk:count 120
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RA.eth[0].mac rxPkOk:sum(packetBytes) 10656
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RA.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RA.eth[0].encap decapPk:count 120
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RA.eth[0].encap decapPk:sum(packetBytes) 8496
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RA.eth[0].encap encapPk:count 446
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RA.eth[0].encap encapPk:sum(packetBytes) 27952
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].mac "simulated time" 100.0325349
+scalar DynamicTest.RA.eth[1].mac full-duplex 1
+scalar DynamicTest.RA.eth[1].mac "frames/sec sent" 1.139629222772
+scalar DynamicTest.RA.eth[1].mac "frames/sec rcvd" 4.4185624251335
+scalar DynamicTest.RA.eth[1].mac "bits/sec sent" 809.97647496385
+scalar DynamicTest.RA.eth[1].mac "bits/sec rcvd" 2864.9878790585
+scalar DynamicTest.RA.eth[1].mac "rx channel idle (%)" 100
+scalar DynamicTest.RA.eth[1].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RA.eth[1].mac txPk:count 114
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RA.eth[1].mac txPk:sum(packetBytes) 10128
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].mac packetReceivedFromUpper:count 114
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RA.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 10128
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].mac passedUpPk:count 442
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RA.eth[1].mac passedUpPk:sum(packetBytes) 35824
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RA.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RA.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RA.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RA.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RA.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RA.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RA.eth[1].mac rxPkOk:count 442
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RA.eth[1].mac rxPkOk:sum(packetBytes) 35824
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RA.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RA.eth[1].encap decapPk:count 442
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RA.eth[1].encap decapPk:sum(packetBytes) 27868
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RA.eth[1].encap encapPk:count 114
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RA.eth[1].encap encapPk:sum(packetBytes) 8040
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.RA.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.RA.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.RA.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.RA.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.RA.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.RA.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.arp arpReplySent:count 3
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.RA.ipv4.arp arpReplySent:sum(packetBytes) 84
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.RA.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.RA.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.RA.ipv4.arp arpResolutionCompleted:count 4
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.RA.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.RB.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.RB.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.RB.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RB.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.RB.eth[0].mac full-duplex 1
+scalar DynamicTest.RB.eth[0].mac "frames/sec sent" 4.4585494154062
+scalar DynamicTest.RB.eth[0].mac "frames/sec rcvd" 7.747479365336
+scalar DynamicTest.RB.eth[0].mac "bits/sec sent" 2875.7043924516
+scalar DynamicTest.RB.eth[0].mac "bits/sec rcvd" 4930.5558485852
+scalar DynamicTest.RB.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.RB.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RB.eth[0].mac txPk:count 446
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RB.eth[0].mac txPk:sum(packetBytes) 35958
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].mac packetReceivedFromUpper:count 446
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RB.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 35958
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].mac passedUpPk:count 775
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RB.eth[0].mac passedUpPk:sum(packetBytes) 61652
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RB.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RB.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RB.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RB.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RB.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RB.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RB.eth[0].mac rxPkOk:count 775
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RB.eth[0].mac rxPkOk:sum(packetBytes) 61652
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RB.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RB.eth[0].encap decapPk:count 775
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RB.eth[0].encap decapPk:sum(packetBytes) 47702
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RB.eth[0].encap encapPk:count 446
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RB.eth[0].encap encapPk:sum(packetBytes) 27876
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].mac "simulated time" 100.0325349
+scalar DynamicTest.RB.eth[1].mac full-duplex 1
+scalar DynamicTest.RB.eth[1].mac "frames/sec sent" 7.7774696080405
+scalar DynamicTest.RB.eth[1].mac "frames/sec rcvd" 4.4885396581108
+scalar DynamicTest.RB.eth[1].mac "bits/sec sent" 4951.0291876048
+scalar DynamicTest.RB.eth[1].mac "bits/sec rcvd" 2894.2583559382
+scalar DynamicTest.RB.eth[1].mac "rx channel idle (%)" 100
+scalar DynamicTest.RB.eth[1].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RB.eth[1].mac txPk:count 778
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RB.eth[1].mac txPk:sum(packetBytes) 61908
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].mac packetReceivedFromUpper:count 778
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RB.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 61908
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].mac passedUpPk:count 449
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RB.eth[1].mac passedUpPk:sum(packetBytes) 36190
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RB.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RB.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RB.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RB.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RB.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RB.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RB.eth[1].mac rxPkOk:count 449
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RB.eth[1].mac rxPkOk:sum(packetBytes) 36190
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RB.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RB.eth[1].encap decapPk:count 449
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RB.eth[1].encap decapPk:sum(packetBytes) 28108
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RB.eth[1].encap encapPk:count 778
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RB.eth[1].encap encapPk:sum(packetBytes) 47832
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.RB.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.RB.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.RB.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.RB.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.RB.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.RB.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.arp arpReplySent:count 4
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.RB.ipv4.arp arpReplySent:sum(packetBytes) 112
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.arp arpRequestSent:count 3
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.RB.ipv4.arp arpRequestSent:sum(packetBytes) 84
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.RB.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.RB.ipv4.arp arpResolutionCompleted:count 7
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.RB.ipv4.arp arpResolutionInitiated:count 3
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.RC.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.RC.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.RC.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RC.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.RC.eth[0].mac full-duplex 1
+scalar DynamicTest.RC.eth[0].mac "frames/sec sent" 4.4185624251335
+scalar DynamicTest.RC.eth[0].mac "frames/sec rcvd" 1.139629222772
+scalar DynamicTest.RC.eth[0].mac "bits/sec sent" 2864.9878790585
+scalar DynamicTest.RC.eth[0].mac "bits/sec rcvd" 809.97647496385
+scalar DynamicTest.RC.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.RC.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RC.eth[0].mac txPk:count 442
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RC.eth[0].mac txPk:sum(packetBytes) 35824
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].mac packetReceivedFromUpper:count 442
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RC.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 35824
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].mac passedUpPk:count 114
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RC.eth[0].mac passedUpPk:sum(packetBytes) 10128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RC.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RC.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RC.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RC.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RC.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RC.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RC.eth[0].mac rxPkOk:count 114
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RC.eth[0].mac rxPkOk:sum(packetBytes) 10128
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RC.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RC.eth[0].encap decapPk:count 114
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RC.eth[0].encap decapPk:sum(packetBytes) 8076
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RC.eth[0].encap encapPk:count 442
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RC.eth[0].encap encapPk:sum(packetBytes) 27832
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].mac "simulated time" 100.0325349
+scalar DynamicTest.RC.eth[1].mac full-duplex 1
+scalar DynamicTest.RC.eth[1].mac "frames/sec sent" 1.1996097081811
+scalar DynamicTest.RC.eth[1].mac "frames/sec rcvd" 4.4985364056789
+scalar DynamicTest.RC.eth[1].mac "bits/sec sent" 841.16632737655
+scalar DynamicTest.RC.eth[1].mac "bits/sec rcvd" 2914.7316949578
+scalar DynamicTest.RC.eth[1].mac "rx channel idle (%)" 100
+scalar DynamicTest.RC.eth[1].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RC.eth[1].mac txPk:count 120
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RC.eth[1].mac txPk:sum(packetBytes) 10518
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].mac packetReceivedFromUpper:count 120
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RC.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 10518
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].mac passedUpPk:count 450
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RC.eth[1].mac passedUpPk:sum(packetBytes) 36446
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RC.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RC.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RC.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RC.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RC.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RC.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RC.eth[1].mac rxPkOk:count 450
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RC.eth[1].mac rxPkOk:sum(packetBytes) 36446
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RC.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RC.eth[1].encap decapPk:count 450
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RC.eth[1].encap decapPk:sum(packetBytes) 28346
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RC.eth[1].encap encapPk:count 120
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RC.eth[1].encap encapPk:sum(packetBytes) 8304
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.RC.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.RC.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.RC.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.RC.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.RC.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.RC.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.arp arpReplySent:count 2
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.RC.ipv4.arp arpReplySent:sum(packetBytes) 56
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.arp arpRequestSent:count 3
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.RC.ipv4.arp arpRequestSent:sum(packetBytes) 84
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.RC.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.RC.ipv4.arp arpResolutionCompleted:count 5
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.RC.ipv4.arp arpResolutionInitiated:count 3
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.RD.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.RD.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.RD.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RD.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.RD.eth[0].mac full-duplex 1
+scalar DynamicTest.RD.eth[0].mac "frames/sec sent" 4.4885396581108
+scalar DynamicTest.RD.eth[0].mac "frames/sec rcvd" 7.7774696080405
+scalar DynamicTest.RD.eth[0].mac "bits/sec sent" 2894.2583559382
+scalar DynamicTest.RD.eth[0].mac "bits/sec rcvd" 4951.0291876048
+scalar DynamicTest.RD.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.RD.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RD.eth[0].mac txPk:count 449
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RD.eth[0].mac txPk:sum(packetBytes) 36190
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].mac packetReceivedFromUpper:count 449
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RD.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 36190
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].mac passedUpPk:count 778
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RD.eth[0].mac passedUpPk:sum(packetBytes) 61908
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RD.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RD.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RD.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RD.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RD.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RD.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RD.eth[0].mac rxPkOk:count 778
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RD.eth[0].mac rxPkOk:sum(packetBytes) 61908
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RD.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RD.eth[0].encap decapPk:count 778
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RD.eth[0].encap decapPk:sum(packetBytes) 47904
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RD.eth[0].encap encapPk:count 449
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RD.eth[0].encap encapPk:sum(packetBytes) 28036
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].mac "simulated time" 100.0325349
+scalar DynamicTest.RD.eth[1].mac full-duplex 1
+scalar DynamicTest.RD.eth[1].mac "frames/sec sent" 7.747479365336
+scalar DynamicTest.RD.eth[1].mac "frames/sec rcvd" 4.4185624251335
+scalar DynamicTest.RD.eth[1].mac "bits/sec sent" 4936.6338711067
+scalar DynamicTest.RD.eth[1].mac "bits/sec rcvd" 2857.4703248873
+scalar DynamicTest.RD.eth[1].mac "rx channel idle (%)" 100
+scalar DynamicTest.RD.eth[1].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RD.eth[1].mac txPk:count 775
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RD.eth[1].mac txPk:sum(packetBytes) 61728
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].mac packetReceivedFromUpper:count 775
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RD.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 61728
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].mac passedUpPk:count 442
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RD.eth[1].mac passedUpPk:sum(packetBytes) 35730
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RD.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RD.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RD.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RD.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RD.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RD.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RD.eth[1].mac rxPkOk:count 442
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RD.eth[1].mac rxPkOk:sum(packetBytes) 35730
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RD.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RD.eth[1].encap decapPk:count 442
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RD.eth[1].encap decapPk:sum(packetBytes) 27774
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RD.eth[1].encap encapPk:count 775
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RD.eth[1].encap encapPk:sum(packetBytes) 47760
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.RD.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.RD.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.RD.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.RD.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.RD.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.RD.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.arp arpReplySent:count 3
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.RD.ipv4.arp arpReplySent:sum(packetBytes) 84
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.arp arpRequestSent:count 2
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.RD.ipv4.arp arpRequestSent:sum(packetBytes) 56
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.RD.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.RD.ipv4.arp arpResolutionCompleted:count 5
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.RD.ipv4.arp arpResolutionInitiated:count 2
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.R2.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.R2.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R2.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.R2.eth[0].mac full-duplex 1
+scalar DynamicTest.R2.eth[0].mac "frames/sec sent" 7.577534656677
+scalar DynamicTest.R2.eth[0].mac "frames/sec rcvd" 6.5778598998594
+scalar DynamicTest.R2.eth[0].mac "bits/sec sent" 4759.251582257
+scalar DynamicTest.R2.eth[0].mac "bits/sec rcvd" 4103.4649417847
+scalar DynamicTest.R2.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.R2.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.R2.eth[0].mac txPk:count 758
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.R2.eth[0].mac txPk:sum(packetBytes) 59510
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].mac packetReceivedFromUpper:count 758
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.R2.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 59510
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].mac passedUpPk:count 658
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R2.eth[0].mac passedUpPk:sum(packetBytes) 51310
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.R2.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.R2.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.R2.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.R2.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.R2.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.R2.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.R2.eth[0].mac rxPkOk:count 658
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.R2.eth[0].mac rxPkOk:sum(packetBytes) 51310
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.R2.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.R2.eth[0].encap decapPk:count 658
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.R2.eth[0].encap decapPk:sum(packetBytes) 39466
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.R2.eth[0].encap encapPk:count 758
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.R2.eth[0].encap encapPk:sum(packetBytes) 45848
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].mac "simulated time" 100.0325349
+scalar DynamicTest.R2.eth[1].mac full-duplex 1
+scalar DynamicTest.R2.eth[1].mac "frames/sec sent" 4.4985364056789
+scalar DynamicTest.R2.eth[1].mac "frames/sec rcvd" 1.1996097081811
+scalar DynamicTest.R2.eth[1].mac "bits/sec sent" 2914.7316949578
+scalar DynamicTest.R2.eth[1].mac "bits/sec rcvd" 841.16632737655
+scalar DynamicTest.R2.eth[1].mac "rx channel idle (%)" 100
+scalar DynamicTest.R2.eth[1].mac "rx channel utilization (%)" 0
+scalar DynamicTest.R2.eth[1].mac txPk:count 450
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.R2.eth[1].mac txPk:sum(packetBytes) 36446
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].mac packetReceivedFromUpper:count 450
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.R2.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 36446
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].mac passedUpPk:count 120
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R2.eth[1].mac passedUpPk:sum(packetBytes) 10518
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.R2.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.R2.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.R2.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.R2.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.R2.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.R2.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.R2.eth[1].mac rxPkOk:count 120
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.R2.eth[1].mac rxPkOk:sum(packetBytes) 10518
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.R2.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.R2.eth[1].encap decapPk:count 120
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.R2.eth[1].encap decapPk:sum(packetBytes) 8358
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.R2.eth[1].encap encapPk:count 450
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.R2.eth[1].encap encapPk:sum(packetBytes) 28292
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].mac "simulated time" 100.0325349
+scalar DynamicTest.R2.eth[2].mac full-duplex 1
+scalar DynamicTest.R2.eth[2].mac "frames/sec sent" 4.4185624251335
+scalar DynamicTest.R2.eth[2].mac "frames/sec rcvd" 7.747479365336
+scalar DynamicTest.R2.eth[2].mac "bits/sec sent" 2857.4703248873
+scalar DynamicTest.R2.eth[2].mac "bits/sec rcvd" 4936.6338711067
+scalar DynamicTest.R2.eth[2].mac "rx channel idle (%)" 100
+scalar DynamicTest.R2.eth[2].mac "rx channel utilization (%)" 0
+scalar DynamicTest.R2.eth[2].mac txPk:count 442
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.R2.eth[2].mac txPk:sum(packetBytes) 35730
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].mac packetReceivedFromUpper:count 442
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.R2.eth[2].mac packetReceivedFromUpper:sum(packetBytes) 35730
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].mac passedUpPk:count 775
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R2.eth[2].mac passedUpPk:sum(packetBytes) 61728
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.R2.eth[2].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.R2.eth[2].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.R2.eth[2].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.R2.eth[2].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.R2.eth[2].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.R2.eth[2].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.R2.eth[2].mac rxPkOk:count 775
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.R2.eth[2].mac rxPkOk:sum(packetBytes) 61728
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.R2.eth[2].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.R2.eth[2].encap decapPk:count 775
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.R2.eth[2].encap decapPk:sum(packetBytes) 47778
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.R2.eth[2].encap encapPk:count 442
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.R2.eth[2].encap encapPk:sum(packetBytes) 27756
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].mac "simulated time" 100.0325349
+scalar DynamicTest.R2.eth[3].mac full-duplex 1
+scalar DynamicTest.R2.eth[3].mac "frames/sec sent" 0
+scalar DynamicTest.R2.eth[3].mac "frames/sec rcvd" 0.99967475681754
+scalar DynamicTest.R2.eth[3].mac "bits/sec sent" 0
+scalar DynamicTest.R2.eth[3].mac "bits/sec rcvd" 655.78664047231
+scalar DynamicTest.R2.eth[3].mac "rx channel idle (%)" 100
+scalar DynamicTest.R2.eth[3].mac "rx channel utilization (%)" 0
+scalar DynamicTest.R2.eth[3].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.R2.eth[3].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.R2.eth[3].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].mac passedUpPk:count 100
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.R2.eth[3].mac passedUpPk:sum(packetBytes) 8200
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.R2.eth[3].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.R2.eth[3].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.R2.eth[3].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.R2.eth[3].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.R2.eth[3].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.R2.eth[3].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.R2.eth[3].mac rxPkOk:count 100
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.R2.eth[3].mac rxPkOk:sum(packetBytes) 8200
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.R2.eth[3].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.R2.eth[3].encap decapPk:count 100
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.R2.eth[3].encap decapPk:sum(packetBytes) 6400
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.R2.eth[3].encap encapPk:count 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.R2.eth[3].encap encapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.R2.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.R2.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.R2.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.R2.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.R2.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.R2.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.arp arpReplySent:count 2
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.R2.ipv4.arp arpReplySent:sum(packetBytes) 56
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.arp arpRequestSent:count 3
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.R2.ipv4.arp arpRequestSent:sum(packetBytes) 84
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.R2.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.R2.ipv4.arp arpResolutionCompleted:count 5
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.R2.ipv4.arp arpResolutionInitiated:count 3
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.H2.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.H2.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.H2.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.H2.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.H2.eth[0].mac full-duplex 1
+scalar DynamicTest.H2.eth[0].mac "frames/sec sent" 6.5778598998594
+scalar DynamicTest.H2.eth[0].mac "frames/sec rcvd" 7.577534656677
+scalar DynamicTest.H2.eth[0].mac "bits/sec sent" 4103.4649417847
+scalar DynamicTest.H2.eth[0].mac "bits/sec rcvd" 4759.251582257
+scalar DynamicTest.H2.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.H2.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.H2.eth[0].mac txPk:count 658
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.H2.eth[0].mac txPk:sum(packetBytes) 51310
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].mac packetReceivedFromUpper:count 658
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.H2.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 51310
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].mac passedUpPk:count 758
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.H2.eth[0].mac passedUpPk:sum(packetBytes) 59510
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.H2.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.H2.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.H2.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.H2.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.H2.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.H2.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.H2.eth[0].mac rxPkOk:count 758
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.H2.eth[0].mac rxPkOk:sum(packetBytes) 59510
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.H2.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.H2.eth[0].encap decapPk:count 758
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.H2.eth[0].encap decapPk:sum(packetBytes) 45866
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.H2.eth[0].encap encapPk:count 658
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.H2.eth[0].encap encapPk:sum(packetBytes) 39448
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.H2.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.H2.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.H2.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.H2.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.H2.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.H2.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.H2.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.H2.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.H2.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.H2.ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.H2.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.H2.udp packetReceived:count 657
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H2.udp packetReceived:sum(packetBytes) 26280
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar DynamicTest.H2.udp packetSent:count 657
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H2.udp packetSent:sum(packetBytes) 26280
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.H2.udp passedUpPk:count 657
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar DynamicTest.H2.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar DynamicTest.H2.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar DynamicTest.H2.app[0] "packets sent" 1
+scalar DynamicTest.H2.app[0] "packets received" 1
+scalar DynamicTest.H2.app[0] packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H2.app[0] packetReceived:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DynamicTest.H2.app[0] rcvdPkLifetime:stats
+field count 1
+field mean 0.00010314
+field stddev nan
+field min 0.00010314
+field max 0.00010314
+field sum 0.00010314
+field sqrsum 1.06378596e-008
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar DynamicTest.H2.app[0] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H2.app[0] packetSent:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.H2.app[1] echoedPk:count 328
+attr interpolationmode none
+attr source packetSent
+attr title "packets echoed, count"
+scalar DynamicTest.H2.app[1] echoedPk:sum(packetBytes) 10496
+attr interpolationmode none
+attr source packetSent
+attr title "packets echoed, sum(packetBytes)"
+scalar DynamicTest.H2.app[2] "packets sent" 1
+scalar DynamicTest.H2.app[2] "packets received" 1
+scalar DynamicTest.H2.app[2] packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H2.app[2] packetReceived:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DynamicTest.H2.app[2] rcvdPkLifetime:stats
+field count 1
+field mean 0.00012452
+field stddev nan
+field min 0.00012452
+field max 0.00012452
+field sum 0.00012452
+field sqrsum 1.55052304e-008
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar DynamicTest.H2.app[2] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H2.app[2] packetSent:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.H2.app[3] "packets sent" 1
+scalar DynamicTest.H2.app[3] "packets received" 1
+scalar DynamicTest.H2.app[3] packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H2.app[3] packetReceived:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DynamicTest.H2.app[3] rcvdPkLifetime:stats
+field count 1
+field mean 0.00013236
+field stddev nan
+field min 0.00013236
+field max 0.00013236
+field sum 0.00013236
+field sqrsum 1.75191696e-008
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar DynamicTest.H2.app[3] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H2.app[3] packetSent:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.H2.app[4] "packets sent" 326
+scalar DynamicTest.H2.app[4] "packets received" 325
+scalar DynamicTest.H2.app[4] packetReceived:count 325
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar DynamicTest.H2.app[4] packetReceived:sum(packetBytes) 10400
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic DynamicTest.H2.app[4] rcvdPkLifetime:stats
+field count 325
+field mean 6.9947261538461e-005
+field stddev 2.4861902922093e-006
+field min 6.98e-005
+field max 0.00011452
+field sum 0.02273286
+field sqrsum 1.592103994e-006
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "received packet lifetime, stats"
+attr unit s
+scalar DynamicTest.H2.app[4] packetSent:count 326
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar DynamicTest.H2.app[4] packetSent:sum(packetBytes) 10432
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar DynamicTest.RK.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.RK.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.RK.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RK.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.RK.eth[0].mac full-duplex 1
+scalar DynamicTest.RK.eth[0].mac "frames/sec sent" 0.99967475681754
+scalar DynamicTest.RK.eth[0].mac "frames/sec rcvd" 0
+scalar DynamicTest.RK.eth[0].mac "bits/sec sent" 655.78664047231
+scalar DynamicTest.RK.eth[0].mac "bits/sec rcvd" 0
+scalar DynamicTest.RK.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.RK.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RK.eth[0].mac txPk:count 100
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RK.eth[0].mac txPk:sum(packetBytes) 8200
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].mac packetReceivedFromUpper:count 100
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RK.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 8200
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RK.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RK.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RK.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RK.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RK.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RK.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RK.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RK.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RK.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RK.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RK.eth[0].encap decapPk:count 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RK.eth[0].encap decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RK.eth[0].encap encapPk:count 100
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RK.eth[0].encap encapPk:sum(packetBytes) 6400
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].mac "simulated time" 100.0325349
+scalar DynamicTest.RK.eth[1].mac full-duplex 1
+scalar DynamicTest.RK.eth[1].mac "frames/sec sent" 1.0996422324993
+scalar DynamicTest.RK.eth[1].mac "frames/sec rcvd" 1.0896454849311
+scalar DynamicTest.RK.eth[1].mac "bits/sec sent" 753.3548967377
+scalar DynamicTest.RK.eth[1].mac "bits/sec rcvd" 748.0766140217
+scalar DynamicTest.RK.eth[1].mac "rx channel idle (%)" 100
+scalar DynamicTest.RK.eth[1].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RK.eth[1].mac txPk:count 110
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RK.eth[1].mac txPk:sum(packetBytes) 9420
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].mac packetReceivedFromUpper:count 110
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RK.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 9420
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].mac passedUpPk:count 109
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RK.eth[1].mac passedUpPk:sum(packetBytes) 9354
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RK.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RK.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RK.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RK.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RK.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RK.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RK.eth[1].mac rxPkOk:count 109
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RK.eth[1].mac rxPkOk:sum(packetBytes) 9354
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RK.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RK.eth[1].encap decapPk:count 109
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RK.eth[1].encap decapPk:sum(packetBytes) 7392
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RK.eth[1].encap encapPk:count 110
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RK.eth[1].encap encapPk:sum(packetBytes) 7404
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.RK.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.RK.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.RK.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.RK.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.RK.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.RK.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.arp arpReplySent:count 1
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.RK.ipv4.arp arpReplySent:sum(packetBytes) 28
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.RK.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.RK.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.RK.ipv4.arp arpResolutionCompleted:count 2
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.RK.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar DynamicTest.RL.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar DynamicTest.RL.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar DynamicTest.RL.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RL.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].mac "simulated time" 100.0325349
+scalar DynamicTest.RL.eth[0].mac full-duplex 1
+scalar DynamicTest.RL.eth[0].mac "frames/sec sent" 1.0896454849311
+scalar DynamicTest.RL.eth[0].mac "frames/sec rcvd" 1.0996422324993
+scalar DynamicTest.RL.eth[0].mac "bits/sec sent" 748.0766140217
+scalar DynamicTest.RL.eth[0].mac "bits/sec rcvd" 753.3548967377
+scalar DynamicTest.RL.eth[0].mac "rx channel idle (%)" 100
+scalar DynamicTest.RL.eth[0].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RL.eth[0].mac txPk:count 109
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RL.eth[0].mac txPk:sum(packetBytes) 9354
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].mac packetReceivedFromUpper:count 109
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RL.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 9354
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].mac passedUpPk:count 110
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RL.eth[0].mac passedUpPk:sum(packetBytes) 9420
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RL.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RL.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RL.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RL.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RL.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RL.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RL.eth[0].mac rxPkOk:count 110
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RL.eth[0].mac rxPkOk:sum(packetBytes) 9420
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RL.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RL.eth[0].encap decapPk:count 110
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RL.eth[0].encap decapPk:sum(packetBytes) 7440
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RL.eth[0].encap encapPk:count 109
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RL.eth[0].encap encapPk:sum(packetBytes) 7356
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].mac "simulated time" 100.0325349
+scalar DynamicTest.RL.eth[1].mac full-duplex 1
+scalar DynamicTest.RL.eth[1].mac "frames/sec sent" 0.99967475681754
+scalar DynamicTest.RL.eth[1].mac "frames/sec rcvd" 0
+scalar DynamicTest.RL.eth[1].mac "bits/sec sent" 655.78664047231
+scalar DynamicTest.RL.eth[1].mac "bits/sec rcvd" 0
+scalar DynamicTest.RL.eth[1].mac "rx channel idle (%)" 100
+scalar DynamicTest.RL.eth[1].mac "rx channel utilization (%)" 0
+scalar DynamicTest.RL.eth[1].mac txPk:count 100
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar DynamicTest.RL.eth[1].mac txPk:sum(packetBytes) 8200
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].mac packetReceivedFromUpper:count 100
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar DynamicTest.RL.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 8200
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar DynamicTest.RL.eth[1].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar DynamicTest.RL.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar DynamicTest.RL.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar DynamicTest.RL.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar DynamicTest.RL.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar DynamicTest.RL.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar DynamicTest.RL.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar DynamicTest.RL.eth[1].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar DynamicTest.RL.eth[1].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar DynamicTest.RL.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar DynamicTest.RL.eth[1].encap decapPk:count 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar DynamicTest.RL.eth[1].encap decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar DynamicTest.RL.eth[1].encap encapPk:count 100
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar DynamicTest.RL.eth[1].encap encapPk:sum(packetBytes) 6400
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar DynamicTest.RL.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar DynamicTest.RL.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar DynamicTest.RL.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar DynamicTest.RL.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar DynamicTest.RL.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar DynamicTest.RL.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.arp arpReplySent:count 1
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar DynamicTest.RL.ipv4.arp arpReplySent:sum(packetBytes) 28
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar DynamicTest.RL.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar DynamicTest.RL.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar DynamicTest.RL.ipv4.arp arpResolutionCompleted:count 2
+attr title "ARP completed resolutions, count"
+scalar DynamicTest.RL.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+

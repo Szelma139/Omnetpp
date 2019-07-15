@@ -1,0 +1,7 @@
+https://www.youtube.com/watch?v=37i7YKvB5VA  -- test bez ecmp wbudowana topologia
+
+https://youtu.be/h2P0SkdMApw  -  test z ecmp
+
+
+
+//poprawic konfigurajce dla H3
